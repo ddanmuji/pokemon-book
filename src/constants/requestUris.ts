@@ -1,6 +1,8 @@
-export const BASE_API = 'https://pokeapi.co/api/v2' as const;
+export const BASE_API = 'https://pokeapi.co/api/v2';
 
-export const POKEMON = `/pokemon` as const;
-export const POKEMON_SPECIES = `/pokemon-species` as const;
-export const ABILITY = `/ability` as const;
-export const EVOLUTION = `/evolution-chain` as const;
+export enum REQUEST_PATH {
+  POKEMON = '/pokemon',
+  POKEMON_SPECIES = '/pokemon-species',
+  ABILITY = '/ability',
+  EVOLUTION = '/evolution-chain',
+}

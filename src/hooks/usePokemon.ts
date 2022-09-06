@@ -1,6 +1,6 @@
 import { AxiosResponse } from 'axios';
 import { useQuery, UseQueryResult } from 'react-query';
-import PokemonService from '@services/PokemonService';
+import { PokemonService } from '@libs/apis';
 
 const KEY = 'pokemon' as const;
 const pokemonService = new PokemonService();

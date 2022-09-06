@@ -1,6 +1,5 @@
 import type { FC } from 'react';
 import type { AxiosResponse } from 'axios';
-
 import { formatNumbering, getImageUrl } from '@utils/index';
 import type { PokemonListResponse } from '@typings/pokemon';
 import * as styles from './pokemonList.styles';

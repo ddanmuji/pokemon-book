@@ -5,7 +5,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import styled from '@emotion/styled';
 
 import GlobalStyle from '@styles/GlobalStyle';
-import RouterConfig from './RouterConfig';
+import RouterConfig from './libs/RouterConfig';
 
 const AppLoading = styled.img`
   position: absolute;
