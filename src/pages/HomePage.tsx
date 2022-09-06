@@ -1,5 +1,12 @@
+import PokemonList from '@components/PokemonList';
+import AppLayout from '@layouts/AppLayout';
+
 const HomePage = () => {
-  return <div>HomePage</div>;
+  return (
+    <AppLayout>
+      <PokemonList />
+    </AppLayout>
+  );
 };
 
 export default HomePage;
