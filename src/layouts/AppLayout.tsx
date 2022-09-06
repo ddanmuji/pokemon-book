@@ -15,7 +15,7 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => (
     </AppDesc>
     {children}
     <AppImageWrapper>
-      <AppImage src="/public/svg/pocketball.svg" />
+      <AppImage src="/svg/pocketball.svg" />
     </AppImageWrapper>
   </AppContainer>
 );
