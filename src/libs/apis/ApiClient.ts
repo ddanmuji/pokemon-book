@@ -1,10 +1,16 @@
-import axios, { AxiosInstance } from 'axios';
+import axios, { AxiosInstance, HeadersDefaults } from 'axios';
 
 abstract class ApiClient {
   protected readonly instance: AxiosInstance;
 
-  constructor(baseURL: string) {
+  constructor(baseURL: string, headers?: HeadersDefaults) {
     this.instance = axios.create({ baseURL });
+
+    if (headers) {
+      this.instance.defaults.headers = {
+        ...headers,
+      };
+    }
   }
 }
 

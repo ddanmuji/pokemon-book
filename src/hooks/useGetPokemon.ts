@@ -5,8 +5,8 @@ import { PokemonService } from '@libs/apis';
 const KEY = 'pokemon' as const;
 const pokemonService = new PokemonService();
 
-const usePokemon = <T>(data?: string): UseQueryResult<AxiosResponse<T>, Error> => {
+const useGetPokemon = <T>(data?: string): UseQueryResult<AxiosResponse<T>, Error> => {
   return useQuery(data ? [KEY, data] : KEY, () => pokemonService.getPokemon<T>(data));
 };
 
-export default usePokemon;
+export default useGetPokemon;

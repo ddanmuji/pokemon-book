@@ -1,6 +1,6 @@
 import { lazy } from 'react';
 import { useRoutes } from 'react-router-dom';
-import { PATH_TO } from '@constants/path';
+import { PATH_TO } from '@constants/router';
 
 const Home = lazy(() => import('@pages/HomePage'));
 const Detail = lazy(() => import('@pages/DetailPage'));

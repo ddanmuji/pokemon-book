@@ -12,15 +12,6 @@ export type Sprites = {
     };
   };
 };
-
-export type Type = {
-  slot: number;
-  type: {
-    name: string;
-    url: string;
-  };
-};
-
 export type Stat = {
   base_stat: number;
   effort: number;
@@ -49,11 +40,6 @@ export type Name = {
   name: string;
 };
 
-export type Color = {
-  name: string;
-  url: string;
-};
-
 export type Version = {
   name: string;
   url: string;
@@ -74,11 +60,6 @@ export type EffectEntry = {
   effect: string;
   language: Language;
   short_effect: string;
-};
-
-export type SimplePokemonInfo = {
-  name: string;
-  url: string;
 };
 
 export type DamageRelation = {

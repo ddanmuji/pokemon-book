@@ -1,11 +1,20 @@
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+
+import InfoTabs from '@components/InfoTabs';
+import type { TInfoTabType } from '@typings/common';
 
 const DetailPage = () => {
   const { id } = useParams();
 
-  console.log(id);
+  const [selectedTab, setSelectedTab] = useState<TInfoTabType>('about');
+  const onChangeTab = (tab: TInfoTabType) => setSelectedTab(tab);
 
-  return <div>DetailPage</div>;
+  return (
+    <div>
+      <InfoTabs tab={selectedTab} onChangeTab={onChangeTab} color={{ name: 'red', url: 'asd' }} />
+    </div>
+  );
 };
 
 export default DetailPage;
