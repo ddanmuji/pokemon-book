@@ -6,10 +6,14 @@ const fontSizes = {
   md: calcRem(16),
   lg: calcRem(18),
   xl: calcRem(20),
+  h2: calcRem(36),
+  h3: calcRem(32),
+  h4: calcRem(24),
 } as const;
 
 const themeColors = {
   textColor: '#333333',
+  textColor_2: '#FFFFFF',
   descColor: '#D1D5DB',
   lineColor: '#CECECE',
 } as const;

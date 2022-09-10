@@ -1,6 +1,5 @@
 export type TColorName =
   | 'black'
-  | 'white'
   | 'gray'
   | 'red'
   | 'green'
@@ -9,6 +8,26 @@ export type TColorName =
   | 'brown'
   | 'purple'
   | 'pink';
+
+export type TTypeColorName =
+  | 'bug'
+  | 'dark'
+  | 'dragon'
+  | 'electric'
+  | 'fire'
+  | 'fairy'
+  | 'fighting'
+  | 'flying'
+  | 'ghost'
+  | 'grass'
+  | 'ground'
+  | 'ice'
+  | 'normal'
+  | 'poison'
+  | 'psychic'
+  | 'rock'
+  | 'steel'
+  | 'water';
 
 export type TUrlType = {
   url: string;

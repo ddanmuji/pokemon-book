@@ -11,22 +11,26 @@ interface DetailHeaderProps {
   types?: TPokemonType[];
 }
 
-const DetailHeader: FC<DetailHeaderProps> = ({ id, color, name, types }) => {
-  return (
-    <S.Container>
-      {name}
-      <br />
-      {color?.name}
-      <br />
-      {types?.map(({ slot, type }, idx) => (
-        <div key={idx} style={{ background: '#333' }}>
-          <img src={`/svg/${type.name}.svg`} />
-        </div>
+const DetailHeader: FC<DetailHeaderProps> = ({ id, color, name, types }) => (
+  <S.Container color={color?.name}>
+    <S.TopWrapper>
+      <S.Name>{name}</S.Name>
+      <S.Index>{formatNumbering(id)}</S.Index>
+    </S.TopWrapper>
+    <S.TypeWrapper>
+      {types?.map(({ type }, idx) => (
+        <S.TypeItem key={idx} color={type.name}>
+          <S.TypeIcon src={`/svg/${type.name}.svg`} />
+        </S.TypeItem>
       ))}
-      <br />
-      <span>{formatNumbering(id)}</span>
-    </S.Container>
-  );
-};
+    </S.TypeWrapper>
+    <S.PokemonImageWrapper>
+      <S.PokemonImage
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`}
+        alt="image"
+      />
+    </S.PokemonImageWrapper>
+  </S.Container>
+);
 
 export default DetailHeader;

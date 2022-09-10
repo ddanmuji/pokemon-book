@@ -1,11 +1,11 @@
 import { FC, ReactNode } from 'react';
-import S from './AppLayout.styled';
+import S from './HomeLayout.styled';
 
-interface AppLayoutProps {
+interface HomeLayoutProps {
   children: ReactNode;
 }
 
-const AppLayout: FC<AppLayoutProps> = ({ children }) => (
+const HomeLayout: FC<HomeLayoutProps> = ({ children }) => (
   <S.Container>
     <S.Title>Pokédex</S.Title>
     <S.Desc>The Pokédex contains detailed stats for every creature from the Pokémon games.</S.Desc>
@@ -16,4 +16,4 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => (
   </S.Container>
 );
 
-export default AppLayout;
+export default HomeLayout;

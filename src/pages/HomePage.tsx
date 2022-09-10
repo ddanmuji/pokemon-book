@@ -1,9 +1,9 @@
 import { useCallback, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import PokemonList from '@components/PokemonList';
+import PokemonList from '@components/home/PokemonList';
 import usePokemonQuery from '@hooks/usePokemonQuery';
-import AppLayout from '@layouts/AppLayout';
+import AppLayout from '@layouts/HomeLayout';
 import type { TPokemonListResponse } from '@typings/pokemon';
 
 const HomePage = () => {

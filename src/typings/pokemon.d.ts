@@ -1,4 +1,4 @@
-import type { TBaseData } from './common';
+import type { TBaseData, TTypeColorName } from './common';
 
 export type TPokemonAbility = {
   ability: TBaseData;
@@ -29,7 +29,10 @@ export type TPokemonStat = {
 
 export type TPokemonType = {
   slot: number;
-  type: TBaseData;
+  type: {
+    name: TTypeColorName;
+    url: string;
+  };
 };
 
 //* ajax response types
