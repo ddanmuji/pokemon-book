@@ -30,8 +30,6 @@ const DetailPage = () => {
     data: speciesData,
   } = useSpeciesQuery(id);
 
-  console.log(pokemondata);
-
   const { abilities, baseExp, height, name, stats, types, weight } = useMemo(
     () => ({
       abilities: pokemondata?.data.abilities,

@@ -3,9 +3,7 @@ import type { AxiosResponse } from 'axios';
 
 import { formatNumbering, getPokemonImageUrl } from '@utils/index';
 import type { TPokemonListResponse } from '@typings/pokemon';
-import * as styles from './pokemonList.styles';
-
-const { Container, Index, Item, List, LoadingWrapper, Name } = styles;
+import S from './PokemonList.styled';
 
 interface PokemonListProps {
   isError: boolean;
@@ -15,23 +13,23 @@ interface PokemonListProps {
 }
 
 const PokemonList: FC<PokemonListProps> = ({ isError, isLoading, onMoveToDetailPage, data }) => (
-  <Container>
+  <S.Container>
     {isLoading || isError ? (
-      <LoadingWrapper>
+      <S.LoadingWrapper>
         <img src="/images/loading.gif" alt="loading..." />
-      </LoadingWrapper>
+      </S.LoadingWrapper>
     ) : (
-      <List>
+      <S.List>
         {data?.data.results.map(({ name }, idx) => (
-          <Item key={name} onClick={onMoveToDetailPage(idx + 1)}>
+          <S.Item key={name} onClick={onMoveToDetailPage(idx + 1)}>
             <img src={getPokemonImageUrl(idx + 1)} />
-            <Name>{name}</Name>
-            <Index>{formatNumbering(idx + 1)}</Index>
-          </Item>
+            <S.Name>{name}</S.Name>
+            <S.Index>{formatNumbering(idx + 1)}</S.Index>
+          </S.Item>
         ))}
-      </List>
+      </S.List>
     )}
-  </Container>
+  </S.Container>
 );
 
 export default PokemonList;

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import type { TColorName } from '@typings/common';
 
-export const List = styled.ul`
+const List = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
@@ -9,7 +9,7 @@ export const List = styled.ul`
   gap: 16px;
 `;
 
-export const ListItem = styled.li<{ active?: boolean; color: TColorName }>`
+const ListItem = styled.li<{ active?: boolean; color: TColorName }>`
   margin: 0;
   border-radius: 4px;
   border: 1px solid ${({ theme }) => theme.themeColors.lineColor};
@@ -18,3 +18,5 @@ export const ListItem = styled.li<{ active?: boolean; color: TColorName }>`
   font-size: ${({ theme }) => theme.fontSizes.md};
   cursor: pointer;
 `;
+
+export default { List, ListItem };

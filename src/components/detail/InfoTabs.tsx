@@ -1,8 +1,7 @@
 import { FC } from 'react';
 import type { TColorInfo, TInfoTabType } from '@typings/common';
-import * as styles from './infoTabs.styles';
+import S from './InfoTabs.styled';
 
-const { List, ListItem } = styles;
 const TAB_ITEMS = ['about', 'evolution', 'stats'] as const;
 
 interface InfoTabsProps {
@@ -15,13 +14,13 @@ const InfoTabs: FC<InfoTabsProps> = ({ onChangeTab, tab, color }) => {
   const onClickTab = (tab: TInfoTabType) => () => onChangeTab(tab);
 
   return (
-    <List>
+    <S.List>
       {TAB_ITEMS.map((item) => (
-        <ListItem key={item} onClick={onClickTab(item)} active={tab === item} color={color.name}>
+        <S.ListItem key={item} onClick={onClickTab(item)} active={tab === item} color={color.name}>
           {item}
-        </ListItem>
+        </S.ListItem>
       ))}
-    </List>
+    </S.List>
   );
 };
 

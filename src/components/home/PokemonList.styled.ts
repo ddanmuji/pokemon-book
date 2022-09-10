@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.div`
+const Container = styled.div`
   margin-top: 24px;
 `;
 
-export const LoadingWrapper = styled.div`
+const LoadingWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,7 +12,7 @@ export const LoadingWrapper = styled.div`
   height: calc(100vh - 180px);
 `;
 
-export const List = styled.ul`
+const List = styled.ul`
   margin: 0;
   padding: 0;
   display: flex;
@@ -20,7 +20,7 @@ export const List = styled.ul`
   gap: 12px;
 `;
 
-export const Item = styled.li`
+const Item = styled.li`
   position: relative;
   list-style: none;
   display: flex;
@@ -35,7 +35,7 @@ export const Item = styled.li`
   }
 `;
 
-export const Name = styled.span`
+const Name = styled.span`
   padding-left: 12px;
   color: ${({ theme }) => theme.themeColors.textColor};
   text-transform: capitalize;
@@ -43,7 +43,7 @@ export const Name = styled.span`
   font-weight: bold;
 `;
 
-export const Index = styled.span`
+const Index = styled.span`
   position: absolute;
   margin: 0;
   padding: 0;
@@ -53,3 +53,5 @@ export const Index = styled.span`
   font-weight: bold;
   color: ${({ theme }) => theme.themeColors.textColor};
 `;
+
+export default { Container, LoadingWrapper, List, Item, Name, Index };

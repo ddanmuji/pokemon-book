@@ -1,10 +1,8 @@
 import { FC } from 'react';
 
-import type { TPokemonType, TSpeciesColor } from '@typings/index';
-import * as styled from './detailHeader.styles';
 import { formatNumbering } from '@utils/index';
-
-const { Container } = styled;
+import type { TPokemonType, TSpeciesColor } from '@typings/index';
+import S from './DetailHeader.styled';
 
 interface DetailHeaderProps {
   id: string;
@@ -15,7 +13,7 @@ interface DetailHeaderProps {
 
 const DetailHeader: FC<DetailHeaderProps> = ({ id, color, name, types }) => {
   return (
-    <Container>
+    <S.Container>
       {name}
       <br />
       {color?.name}
@@ -27,7 +25,7 @@ const DetailHeader: FC<DetailHeaderProps> = ({ id, color, name, types }) => {
       ))}
       <br />
       <span>{formatNumbering(id)}</span>
-    </Container>
+    </S.Container>
   );
 };
 

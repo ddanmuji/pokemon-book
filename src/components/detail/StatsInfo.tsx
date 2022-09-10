@@ -1,5 +1,7 @@
+import S from './StatsInfo.styled';
+
 const StatsInfo = () => {
-  return <div>StatsInfo</div>;
+  return <S.Container>StatsInfo</S.Container>;
 };
 
 export default StatsInfo;
