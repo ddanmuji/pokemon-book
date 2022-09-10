@@ -16,6 +16,7 @@ export type TSpeciesName = {
   name: string;
 };
 
+//* ajax response types
 export type TSpeciesResponse = {
   color: TSpeciesColor;
   evolution_chain: TUrlType;

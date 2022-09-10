@@ -1,4 +1,4 @@
-export const BASE_API = 'https://pokeapi.co/api/v2';
+export const BASE_API = 'https://pokeapi.co/api/v2' as const;
 
 export enum REQUEST_PATH {
   POKEMON = '/pokemon',

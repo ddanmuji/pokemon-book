@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import type { TColorInfo, TInfoTabType } from '@typings/common';
+import type { TSpeciesColor, TInfoTabType } from '@typings/index';
 import S from './InfoTabs.styled';
 
 const TAB_ITEMS = ['about', 'evolution', 'stats'] as const;
@@ -7,7 +7,7 @@ const TAB_ITEMS = ['about', 'evolution', 'stats'] as const;
 interface InfoTabsProps {
   onChangeTab: (tab: TInfoTabType) => void;
   tab: TInfoTabType;
-  color: TColorInfo;
+  color?: TSpeciesColor;
 }
 
 const InfoTabs: FC<InfoTabsProps> = ({ onChangeTab, tab, color }) => {
@@ -16,7 +16,12 @@ const InfoTabs: FC<InfoTabsProps> = ({ onChangeTab, tab, color }) => {
   return (
     <S.List>
       {TAB_ITEMS.map((item) => (
-        <S.ListItem key={item} onClick={onClickTab(item)} active={tab === item} color={color.name}>
+        <S.ListItem
+          key={item}
+          onClick={onClickTab(item)}
+          active={tab === item}
+          color={color?.name || 'gray'}
+        >
           {item}
         </S.ListItem>
       ))}

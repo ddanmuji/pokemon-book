@@ -1,11 +1,11 @@
 import { useCallback, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import DetailHeader from '@components/detail/DetailHeader';
-import InfoTabs from '@components/detail/InfoTabs';
-import AboutInfo from '@components/detail/AboutInfo';
-import StatsInfo from '@components/detail/StatsInfo';
-import EvolutionInfo from '@components/detail/EvolutionInfo';
+import AboutInfo from '@components/AboutInfo';
+import StatsInfo from '@components/StatsInfo';
+import EvolutionInfo from '@components/EvolutionInfo';
+import DetailHeader from '@components/DetailHeader';
+import InfoTabs from '@components/InfoTabs';
 import usePokemonQuery from '@hooks/usePokemonQuery';
 import useSpeciesQuery from '@hooks/useSpeciesQuery';
 import DetailLayout from '@layouts/DetailLayout';
@@ -74,7 +74,7 @@ const DetailPage = () => {
   return (
     <DetailLayout>
       <DetailHeader id={id} name={name} types={types} color={color} />
-      <InfoTabs tab={selectedTab} onChangeTab={onChangeTab} color={{ name: 'red', url: 'asd' }} />
+      <InfoTabs tab={selectedTab} onChangeTab={onChangeTab} color={color} />
       <DetailInfoComponent />
     </DetailLayout>
   );

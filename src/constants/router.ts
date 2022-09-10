@@ -1,4 +1,6 @@
-export const PATH_TO = {
-  Home: '/',
-  Detail: '/detail/:id',
-} as const;
+enum PATH_TO {
+  HOME = '/',
+  DETAIL = '/detail/:id',
+}
+
+export default PATH_TO;

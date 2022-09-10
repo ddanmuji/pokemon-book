@@ -1,10 +1,9 @@
 import styled from '@emotion/styled';
 import type { TColorName, TTypeColorName } from '@typings/common';
 
-const Container = styled.div<{ color?: TColorName }>`
+const Container = styled.div<{ color: TColorName }>`
   width: 100%;
-  height: 300px;
-  background-color: ${({ color, theme }) => theme.basicColors[color || 'gray']};
+  background-color: ${({ color, theme }) => theme.basicColors[color]};
   border-radius: 0 0 15% 15%;
   padding: 20px;
   display: flex;
@@ -60,6 +59,7 @@ const PokemonImageWrapper = styled.div`
 
 const PokemonImage = styled.img`
   width: 160px;
+  margin-bottom: 20px;
 `;
 
 export default {

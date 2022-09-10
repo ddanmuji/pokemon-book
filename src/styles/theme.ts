@@ -21,6 +21,7 @@ const themeColors = {
 const basicColors = {
   black: '#1F2937',
   gray: '#6B7280',
+  white: '#6B7280',
   red: '#EF4444',
   green: '#10B981',
   blue: '#3B82F6',

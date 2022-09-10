@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { formatNumbering } from '@utils/index';
+import { formatNumbering, getPokemonDetailImageUrl } from '@utils/index';
 import type { TPokemonType, TSpeciesColor } from '@typings/index';
 import S from './DetailHeader.styled';
 
@@ -12,7 +12,7 @@ interface DetailHeaderProps {
 }
 
 const DetailHeader: FC<DetailHeaderProps> = ({ id, color, name, types }) => (
-  <S.Container color={color?.name}>
+  <S.Container color={color?.name || 'gray'}>
     <S.TopWrapper>
       <S.Name>{name}</S.Name>
       <S.Index>{formatNumbering(id)}</S.Index>
@@ -25,10 +25,7 @@ const DetailHeader: FC<DetailHeaderProps> = ({ id, color, name, types }) => (
       ))}
     </S.TypeWrapper>
     <S.PokemonImageWrapper>
-      <S.PokemonImage
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`}
-        alt="image"
-      />
+      <S.PokemonImage src={getPokemonDetailImageUrl(id)} alt="image" />
     </S.PokemonImageWrapper>
   </S.Container>
 );
