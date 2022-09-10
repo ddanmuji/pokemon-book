@@ -1,18 +1,23 @@
+import { useMemo } from 'react';
 import PokemonList from '@components/PokemonList';
-import useGetPokemon from '@hooks/useGetPokemon';
+import usePokemonQuery from '@hooks/usePokemonQuery';
 import AppLayout from '@layouts/AppLayout';
-import type { TPokemonListResponse } from '@typings/pokemon';
 
 const HomePage = () => {
-  const {
-    isError: isPokemonError,
-    isLoading: isPokemonLoading,
-    data: PokemonData,
-  } = useGetPokemon<TPokemonListResponse>();
+  const pokemonQueryResult = usePokemonQuery();
+
+  const pokemonListProps = useMemo(
+    () => ({
+      isError: pokemonQueryResult.isError,
+      isLoading: pokemonQueryResult.isLoading,
+      data: pokemonQueryResult.data,
+    }),
+    [pokemonQueryResult],
+  );
 
   return (
     <AppLayout>
-      <PokemonList isError={isPokemonError} isLoading={isPokemonLoading} data={PokemonData} />
+      <PokemonList {...pokemonListProps} />
     </AppLayout>
   );
 };
