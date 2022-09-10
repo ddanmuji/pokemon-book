@@ -11,11 +11,10 @@ export const List = styled.ul`
 
 export const ListItem = styled.li<{ active?: boolean; color: TColorName }>`
   margin: 0;
-  border-radius: 8px;
-  box-shadow: 6px 4px 14px 5px rgba(0, 0, 0, 0.21);
+  border-radius: 4px;
+  border: 1px solid ${({ theme }) => theme.themeColors.lineColor};
+  color: ${({ theme }) => theme.themeColors.textColor};
   padding: 6px 12px;
-  border: none;
   font-size: ${({ theme }) => theme.fontSizes.md};
-  color: ${({ active, color, theme }) => theme.colors[active ? color : 'gray']};
   cursor: pointer;
 `;

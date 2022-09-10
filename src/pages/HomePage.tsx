@@ -1,18 +1,22 @@
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import PokemonList from '@components/PokemonList';
 import usePokemonQuery from '@hooks/usePokemonQuery';
 import AppLayout from '@layouts/AppLayout';
+import type { TPokemonListResponse } from '@typings/pokemon';
 
 const HomePage = () => {
-  const pokemonQueryResult = usePokemonQuery();
+  const navigate = useNavigate();
+  const onMoveToDetailPage = useCallback(
+    (idx: number) => () => navigate(`/detail/${idx}`),
+    [navigate],
+  );
 
+  const { isLoading, isError, data } = usePokemonQuery<TPokemonListResponse>();
   const pokemonListProps = useMemo(
-    () => ({
-      isError: pokemonQueryResult.isError,
-      isLoading: pokemonQueryResult.isLoading,
-      data: pokemonQueryResult.data,
-    }),
-    [pokemonQueryResult],
+    () => ({ isLoading, isError, data, onMoveToDetailPage }),
+    [data, isError, isLoading, onMoveToDetailPage],
   );
 
   return (

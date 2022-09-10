@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import type { AxiosResponse } from 'axios';
 
-import { formatNumbering, getImageUrl } from '@utils/index';
-import type { TPokemonResponse } from '@typings/pokemon';
+import { formatNumbering, getPokemonImageUrl } from '@utils/index';
+import type { TPokemonListResponse } from '@typings/pokemon';
 import * as styles from './pokemonList.styles';
 
 const { Container, Index, Item, List, LoadingWrapper, Name } = styles;
@@ -10,10 +10,11 @@ const { Container, Index, Item, List, LoadingWrapper, Name } = styles;
 interface PokemonListProps {
   isError: boolean;
   isLoading: boolean;
-  data?: AxiosResponse<TPokemonResponse>;
+  onMoveToDetailPage: (idx: number) => () => void;
+  data?: AxiosResponse<TPokemonListResponse>;
 }
 
-const PokemonList: FC<PokemonListProps> = ({ isError, isLoading, data }) => (
+const PokemonList: FC<PokemonListProps> = ({ isError, isLoading, onMoveToDetailPage, data }) => (
   <Container>
     {isLoading || isError ? (
       <LoadingWrapper>
@@ -22,8 +23,8 @@ const PokemonList: FC<PokemonListProps> = ({ isError, isLoading, data }) => (
     ) : (
       <List>
         {data?.data.results.map(({ name }, idx) => (
-          <Item key={name}>
-            <img src={getImageUrl(idx + 1)} />
+          <Item key={name} onClick={onMoveToDetailPage(idx + 1)}>
+            <img src={getPokemonImageUrl(idx + 1)} />
             <Name>{name}</Name>
             <Index>{formatNumbering(idx + 1)}</Index>
           </Item>

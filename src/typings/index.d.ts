@@ -1,1 +1,2 @@
-export * from './pokemon';
+export * from './pokemon.d';
+export * from './species.d';

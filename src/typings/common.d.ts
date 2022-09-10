@@ -10,9 +10,16 @@ export type TColorName =
   | 'purple'
   | 'pink';
 
-export type TColorInfo = {
-  name: TColorName;
+export type TUrlType = {
   url: string;
 };
 
+export type TColorInfo = {
+  name: TColorName;
+} & TUrlType;
+
 export type TInfoTabType = 'about' | 'stats' | 'evolution';
+
+export type TBaseData = {
+  name: string;
+} & TUrlType;

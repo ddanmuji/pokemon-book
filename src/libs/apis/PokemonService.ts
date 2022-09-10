@@ -1,6 +1,6 @@
 import type { AxiosPromise } from 'axios';
 import { BASE_API, REQUEST_PATH } from '@constants/requestUris';
-import type { TPokemonResponse } from '@typings/index';
+import type { TSpeciesResponse } from '@typings/index';
 import ApiClient from './ApiClient';
 
 class PokemonService extends ApiClient {
@@ -8,10 +8,15 @@ class PokemonService extends ApiClient {
     super(BASE_API);
   }
 
-  /** @return {TPokemonResponse} 포켓몬 리스트 가져오는 api */
-  getPokemon(data?: string): AxiosPromise<TPokemonResponse> {
-    const requestUrl = data ? `${REQUEST_PATH.POKEMON}/${data}` : REQUEST_PATH.POKEMON;
+  /** @return {TPokemonListResponse | TPokemonResponse} 포켓몬의 리스트, 정보를 가져오는 api */
+  getPokemon<T>(id?: string): AxiosPromise<T> {
+    const requestUrl = id ? `${REQUEST_PATH.POKEMON}/${id}` : REQUEST_PATH.POKEMON;
     return this.instance.get(requestUrl);
+  }
+
+  /** @return {TSpeciesResponse} 포켓몬의 종류를 가져오는 api */
+  getSpecies(id: string): AxiosPromise<TSpeciesResponse> {
+    return this.instance.get(`${REQUEST_PATH.POKEMON_SPECIES}/${id}`);
   }
 }
 
