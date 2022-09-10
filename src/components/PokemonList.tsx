@@ -2,7 +2,7 @@ import { FC } from 'react';
 import type { AxiosResponse } from 'axios';
 
 import { formatNumbering, getImageUrl } from '@utils/index';
-import type { TPokemonListResponse } from '@typings/pokemon';
+import type { TPokemonResponse } from '@typings/pokemon';
 import * as styles from './pokemonList.styles';
 
 const { Container, Index, Item, List, LoadingWrapper, Name } = styles;
@@ -10,7 +10,7 @@ const { Container, Index, Item, List, LoadingWrapper, Name } = styles;
 interface PokemonListProps {
   isError: boolean;
   isLoading: boolean;
-  data?: AxiosResponse<TPokemonListResponse>;
+  data?: AxiosResponse<TPokemonResponse>;
 }
 
 const PokemonList: FC<PokemonListProps> = ({ isError, isLoading, data }) => (

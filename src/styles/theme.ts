@@ -8,9 +8,14 @@ const fontSizes = {
   xl: calcRem(20),
 } as const;
 
-const colors = {
+const themeColors = {
+  textColor: '#333333',
+  descColor: '#D1D5DB',
+  lineColor: '#CECECE',
+} as const;
+
+const basicColors = {
   black: '#1F2937',
-  white: '#fffff',
   gray: '#6B7280',
   red: '#EF4444',
   green: '#10B981',
@@ -44,6 +49,7 @@ const typeColors = {
 
 export const theme = {
   fontSizes,
-  colors,
+  themeColors,
+  basicColors,
   typeColors,
 };
