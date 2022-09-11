@@ -27,6 +27,7 @@ const ImageWrapper = styled.div`
   right: 0;
   opacity: 0.4;
   transform: translate(96px, -96px);
+  z-index: -1;
 `;
 
 const Image = styled.img`

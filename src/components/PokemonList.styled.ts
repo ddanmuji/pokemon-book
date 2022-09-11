@@ -31,8 +31,13 @@ const Item = styled.li`
   transition: 200ms;
 
   &:hover {
-    background-color: ${({ theme }) => theme.themeColors.lineColor};
+    background-color: ${({ theme }) => `${theme.themeColors.lineColor}50`};
   }
+`;
+
+const Image = styled.img`
+  width: 96px;
+  height: 96px;
 `;
 
 const Name = styled.span`
@@ -54,4 +59,4 @@ const Index = styled.span`
   color: ${({ theme }) => theme.themeColors.textColor};
 `;
 
-export default { Container, LoadingWrapper, List, Item, Name, Index };
+export default { Container, LoadingWrapper, List, Item, Image, Name, Index };

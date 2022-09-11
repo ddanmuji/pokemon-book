@@ -3,10 +3,13 @@ import S from './DetailLayout.styled';
 
 interface DetailLayoutProps {
   children: ReactNode;
+  isLoading: boolean;
 }
 
-const DetailLayout: FC<DetailLayoutProps> = ({ children }) => {
-  return (
+const DetailLayout: FC<DetailLayoutProps> = ({ children, isLoading }) => {
+  return isLoading ? (
+    <S.Loading src="/images/loading.gif" alt="loading..." />
+  ) : (
     <S.Container>
       {children}
       <S.ImageWrapper>

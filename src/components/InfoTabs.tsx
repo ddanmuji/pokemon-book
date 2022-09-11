@@ -2,7 +2,7 @@ import { FC } from 'react';
 import type { TSpeciesColor, TInfoTabType } from '@typings/index';
 import S from './InfoTabs.styled';
 
-const TAB_ITEMS = ['about', 'evolution', 'stats'] as const;
+const TAB_ITEMS = ['about', 'stats', 'evolution'] as const;
 
 interface InfoTabsProps {
   onChangeTab: (tab: TInfoTabType) => void;
